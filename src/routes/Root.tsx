@@ -18,6 +18,11 @@ const Root = () => {
             Contact
           </Link>
         </li>
+        <li>
+          <Link to="/posts" className="link-base mx-2">
+            Posts
+          </Link>
+        </li>
       </ul>
       <Outlet />
     </>
