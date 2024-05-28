@@ -4,7 +4,7 @@ interface RouteError {
   statusText?: string;
   message?: string;
 }
-export default function ErrorPage() {
+export const ErrorPage = () => {
   const error = useRouteError() as RouteError;
   console.error(error);
 
@@ -17,4 +17,4 @@ export default function ErrorPage() {
       </p>
     </div>
   );
-}
+};
