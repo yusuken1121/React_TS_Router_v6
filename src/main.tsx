@@ -7,8 +7,10 @@ import Root from "./routes/Root.tsx";
 import { Home } from "./routes/Home.tsx";
 import { About } from "./routes/About.tsx";
 import { Contact } from "./routes/Contact.tsx";
-import { Posts, loader as postsLoader } from "./routes/Posts.tsx";
+import { Posts } from "./routes/Posts.tsx";
 import { ErrorPage } from "./routes/Error-pages.tsx";
+import { Post } from "./routes/Post.tsx";
+import { PostIndex, loader } from "./routes/Postindex.tsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,7 +32,17 @@ const router = createBrowserRouter([
       {
         path: "posts",
         element: <Posts />,
-        loader: postsLoader,
+        children: [
+          {
+            index: true,
+            element: <PostIndex />,
+            loader: loader,
+          },
+          {
+            path: ":postId",
+            element: <Post />,
+          },
+        ],
       },
     ],
   },
