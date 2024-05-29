@@ -16,10 +16,10 @@ export const loader: LoaderFunction = async () => {
 };
 
 export const PostIndex = () => {
-  const { posts } = useLoaderData();
+  const { posts } = useLoaderData() as { posts: PostType[] | null };
   return (
     <ul>
-      {posts.map((post: PostType) => {
+      {posts?.map((post: PostType) => {
         return (
           <li key={post.id}>
             <Link
