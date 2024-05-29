@@ -9,8 +9,8 @@ import { About } from "./routes/About.tsx";
 import { Contact } from "./routes/Contact.tsx";
 import { Posts } from "./routes/Posts.tsx";
 import { ErrorPage } from "./routes/Error-pages.tsx";
-import { Post } from "./routes/Post.tsx";
-import { PostIndex, loader } from "./routes/Postindex.tsx";
+import { Post, loader as PostLoader } from "./routes/Post.tsx";
+import { PostIndex, loader as PostsLoader } from "./routes/Postindex.tsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,11 +36,12 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <PostIndex />,
-            loader: loader,
+            loader: PostsLoader,
           },
           {
             path: ":postId",
             element: <Post />,
+            loader: PostLoader,
           },
         ],
       },
