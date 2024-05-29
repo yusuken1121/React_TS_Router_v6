@@ -32,6 +32,7 @@ const router = createBrowserRouter([
       {
         path: "posts",
         element: <Posts />,
+        errorElement: <ErrorPage />,
         children: [
           {
             index: true,
@@ -42,6 +43,7 @@ const router = createBrowserRouter([
             path: ":postId",
             element: <Post />,
             loader: PostLoader,
+            errorElement: <ErrorPage />,
           },
         ],
       },
