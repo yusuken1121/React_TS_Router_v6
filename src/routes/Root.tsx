@@ -23,6 +23,11 @@ const Root = () => {
             Posts
           </Link>
         </li>
+        <li>
+          <Link to="/todos" className="link-base mx-2">
+            Todos
+          </Link>
+        </li>
       </ul>
       <Outlet />
     </>

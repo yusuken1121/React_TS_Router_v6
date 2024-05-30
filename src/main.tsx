@@ -11,6 +11,7 @@ import { Posts } from "./routes/Posts.tsx";
 import { ErrorPage } from "./routes/Error-pages.tsx";
 import { Post, loader as PostLoader } from "./routes/Post.tsx";
 import { PostIndex, loader as PostsLoader } from "./routes/Postindex.tsx";
+import { Todos, loader as TodosLoader } from "./routes/Todos.tsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -46,6 +47,12 @@ const router = createBrowserRouter([
             errorElement: <ErrorPage />,
           },
         ],
+      },
+      {
+        path: "todos",
+        element: <Todos />,
+        loader: TodosLoader,
+        errorElement: <ErrorPage />,
       },
     ],
   },
